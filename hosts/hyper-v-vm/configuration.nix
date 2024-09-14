@@ -3,6 +3,8 @@
   imports = [
     ./disko.nix
     ./hardware-configuration.nix
+    ../../modules/packages.nix
+    ../../modules/bootloader.nix
   ];
 
   networking.hostName = "hyper-v-vm";

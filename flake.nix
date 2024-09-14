@@ -36,8 +36,6 @@
       modules = [
         disko.nixosModules.disko
         ./hosts/hyper-v-vm/configuration.nix
-        ./modules/packages.nix
-        ./modules/bootloader.nix
       ];
 
     };
