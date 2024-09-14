@@ -5,7 +5,7 @@
   inputs = {
 
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-23.11";
+      url = "github:NixOS/nixpkgs/nixos-24.05";
     };
 
     home-manager = {
@@ -29,9 +29,9 @@
 
     nixosConfigurations.hyper-v-vm = nixpkgs.lib.nixosSystem {
 
-      system = "x86_64-linux";
-
-      nix.settings.experimental-features = [ "nix-command" "flakes" ];
+      specialArgs = {
+        system = "x86_64-linux";
+      };
 
       modules = [
         ./hosts/hyper-v-vm/configuration.nix
