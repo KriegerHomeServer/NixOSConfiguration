@@ -1,7 +1,6 @@
 { ... }: {
 
   imports = [
-    disko.nixosModules.disko
     ./disko.nix
     ./hardware-configuration.nix
   ];
