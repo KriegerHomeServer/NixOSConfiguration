@@ -7,15 +7,20 @@
   # Define options for the module
   options = { };
 
-  # Description: Define options for the user's home
-  # Type: Attribute Set
-  home = {
+  # Define configuration for the module
+  config = { 
 
-    username = "orchestrator";
+    # Description: Define options for the user's home
+    # Type: Attribute Set
+    home = {
 
-    homeDirectory = "/home/orchestrator";
+      username = "orchestrator";
 
-    stateVersion = "24.05";
+      homeDirectory = "/home/orchestrator";
+
+      stateVersion = "24.05";
+
+    };
 
   };
 
