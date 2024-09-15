@@ -22,15 +22,11 @@
 
   };
 
-  # Conditionally enable the Hyper-V hardware configuration
-  config = lib.mkIf (config.orchestrator.hardware-configuration == "hyper-v") {
-
-    orchestrator.hardware-configuration.hyper-v.enable = true;
-
-  };
-
   # Define the system configuration
   config = {
+
+    # Conditionally enable the Hyper-V hardware configuration
+    orchestrator.hardware-configuration.hyper-v.enable = (config.orchestrator.hardware-configuration == "hyper-v");
 
     networking.hostName = "orchestrator";
 
