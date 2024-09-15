@@ -16,7 +16,7 @@
 
       # Description: The account UID
       # Type: Integer
-      uid = 1100;
+      uid = 1000;
 
       # Description: The name of the user account
       # Type: String

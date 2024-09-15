@@ -5,6 +5,7 @@
   imports = [
     ./hardware-configuration-hyper-v.nix
     ./modules/bootloader.nix
+    ./modules/home-manager.nix
     ./modules/network.nix
     ./modules/packages.nix
     ./modules/system.nix

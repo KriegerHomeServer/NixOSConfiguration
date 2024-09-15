@@ -18,7 +18,7 @@
 
       # Description: Define arguments to pass to the imported modules
       # Type: Attribute Set
-      specialArgs = {
+      extraSpecialArgs = {
 
          # Include the inputs provided by the flake
         inherit inputs;
