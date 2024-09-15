@@ -26,7 +26,7 @@
   config = {
 
     # Conditionally enable the Hyper-V hardware configuration
-    orchestrator.hardware-configuration.hyper-v.enable = (config.orchestrator.hardware-configuration == "hyper-v");
+    orchestrator.hardware-configuration.hyper-v.enable = true;
 
     networking.hostName = "orchestrator";
 
