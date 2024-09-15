@@ -27,16 +27,17 @@
 
   outputs = { self, nixpkgs, home-manager, nixvim, disko, ... }@inputs: {
 
-    nixosConfigurations.hyper-v-vm = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.orchestrator-hyper-v = nixpkgs.lib.nixosSystem {
 
       specialArgs = {
         system = "x86_64-linux";
       };
 
       modules = [
-        disko.nixosModules.disko
-        ./hosts/hyper-v-vm/configuration.nix
+        ./hosts/orchestrator/configuration.nix
       ];
+
+      orchestrator.hardware-configuration = "hyper-v";
 
     };
 
