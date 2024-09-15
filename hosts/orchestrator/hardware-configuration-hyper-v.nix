@@ -4,15 +4,13 @@
   # Import other modules
   imports = [ ];
 
-  # Add an option to enable the hardware configuration
+  # Define the options for the hardware configuration
   options = {
     
-    orchestrator.hardware-configuration.hyper-v.enable = lib.mkEnableOption "Enable the Hyper-V hardware configuration for the Orchestrator";
-
   };
 
   # Define the hardware configuration
-  config = lib.mkIf config.orchestrator.hardware-configuration.hyper-v.enable {
+  config = {
 
     boot.initrd.availableKernelModules = [ "ata_piix" "floppy" "sd_mod" "sr_mod" ];
     boot.initrd.kernelModules = [ ];

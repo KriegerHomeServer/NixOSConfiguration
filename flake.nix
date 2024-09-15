@@ -35,12 +35,10 @@
         
         system = "x86_64-linux";
 
-        config.orchestrator.hardware-configuration = "hyper-v";
-
       };
 
       modules = [
-        ./hosts/orchestrator/configuration.nix
+        ./hosts/orchestrator/configuration-hyper-v.nix
       ];
 
     };
