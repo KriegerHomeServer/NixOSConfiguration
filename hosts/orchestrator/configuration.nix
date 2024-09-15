@@ -30,14 +30,18 @@
   };
 
   # Define the system configuration
-  networking.hostName = "orchestrator";
+  config = {
 
-  time.timeZone = "America/Chicago";
+    networking.hostName = "orchestrator";
 
-  i18n.defaultLocale = "en_US.UTF-8";
+    time.timeZone = "America/Chicago";
 
-  system.stateVersion = "24.05";
+    i18n.defaultLocale = "en_US.UTF-8";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    system.stateVersion = "24.05";
+
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  };
 
 }
