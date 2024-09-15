@@ -1,23 +1,27 @@
-# Module defining the packages for the Orchestrator
+# Packages configuration for the Orchestrator
 { config, lib, pkgs, modulesPath, ... }: {
 
-  # Import other modules
+  # Import additional modules
   imports = [ ];
 
-  # Define no options
-  options = {
+  # Define options for the module
+  options = { };
 
-  };
-
-  # Define the packages configuration
+  # Define configuration for the module
   config = {
 
-    # Disable unfree packages
+    # Description: Global configuration for Nixpkgs
+    # Type: Attribute Set
     nixpkgs.config = {
+
+      # Description: Whether to allow unfree packages
+      # Type: Boolean
       allowUnfree = false;
+    
     };
 
-    # Define the packages
+    # Description: The set of packages that appear in /run/current-system/sw
+    # Type: List
     environment.systemPackages = with pkgs; [
 
       git
@@ -25,7 +29,8 @@
 
     ];
 
-    # Define the fonts
+    # Description: List of primary font packages
+    # Type: List
     fonts.packages = with pkgs; [
 
     ];

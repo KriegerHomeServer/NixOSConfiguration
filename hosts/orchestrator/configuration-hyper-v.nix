@@ -1,31 +1,19 @@
 # Configuration for the Orchestrator
-{ config, lib, pkgs, modulesPath, ... }: {
+{ config, lib, pkgs, modulesPath, inputs, ... }: {
 
-  # Import other modules
+  # Import additional modules
   imports = [
     ./hardware-configuration-hyper-v.nix
-    ./modules/packages.nix
     ./modules/bootloader.nix
+    ./modules/network.nix
+    ./modules/packages.nix
+    ./modules/system.nix
   ];
 
-  # Define the options for the Orchestrator
-  options = {
+  # Define options for the module
+  options = { };
 
-  };
-
-  # Define the system configuration
-  config = {
-
-    networking.hostName = "orchestrator";
-
-    time.timeZone = "America/Chicago";
-
-    i18n.defaultLocale = "en_US.UTF-8";
-
-    system.stateVersion = "24.05";
-
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  };
+  # Define configuration for the module
+  config = { };
 
 }

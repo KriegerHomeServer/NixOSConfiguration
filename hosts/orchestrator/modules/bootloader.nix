@@ -1,15 +1,13 @@
-# Module defining the bootloader for the Orchestrator
+# Bootloader configuration for the Orchestrator
 { config, lib, pkgs, modulesPath, ... }: {
 
-  # Import other modules
+  # Import additional modules
   imports = [ ];
 
-  # Define no options
-  options = {
+  # Define options for the module
+  options = { };
 
-  };
-
-  # Define the packages configuration
+  # Define configuration for the module
   config = {
 
     # Description: Define options for the bootloader

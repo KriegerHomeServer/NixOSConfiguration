@@ -1,15 +1,13 @@
 # Hyper-V Hardware Configuration for the Orchestrator
 { config, lib, pkgs, modulesPath, ... }: {
 
-  # Import other modules
+  # Import additional modules
   imports = [ ];
 
-  # Define the options for the hardware configuration
-  options = {
-    
-  };
+  # Define options for the module
+  options = { };
 
-  # Define the hardware configuration
+  # Define configuration for the module
   config = {
 
     boot.initrd.availableKernelModules = [ "ata_piix" "floppy" "sd_mod" "sr_mod" ];

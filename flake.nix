@@ -25,18 +25,35 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, disko, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim, disko, ... }@inputs: 
+  let 
+  
+    # Defines the system architecture
+    system = "x86_64-linux"; 
+  
+    # Defines the nixpkgs instance
+    pkgs = nixpkgs.legacyPackages.${system};
 
+  in {
+
+    # Define the orchestrator configuration
     nixosConfigurations.orchestrator-hyper-v = nixpkgs.lib.nixosSystem {
 
+      # Define the system architecture for the configuration
+      inherit system;
+
+      # Define arguments to pass to the imported modules
       specialArgs = {
         
+        # Include the nixpkgs instance
+        inherit pkgs;
+
+        # Include the inputs provided by the flake
         inherit inputs;
         
-        system = "x86_64-linux";
-
       };
 
+      # Import modules for the configuration
       modules = [
         ./hosts/orchestrator/configuration-hyper-v.nix
       ];
