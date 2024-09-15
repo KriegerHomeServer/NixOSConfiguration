@@ -18,7 +18,7 @@
 
       homeDirectory = "/home/orchestrator";
 
-      stateVersion = "24.05";
+      stateVersion = "23.05";
 
     };
 
