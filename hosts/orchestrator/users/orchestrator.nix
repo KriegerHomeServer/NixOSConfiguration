@@ -1,15 +1,26 @@
 # User configuration for the 'orchestrator' user
 { config, lib, pkgs, modulesPath, inputs, ... }: {
 
-  # Description: Define options for the user's home
-  # Type: Attribute Set
-  home = {
+  # Import additional modules
+  imports = [ ];
 
-    username = "orchestrator";
+  # Define options for the module
+  options = { };
 
-    homeDirectory = "/home/orchestrator";
+  # Define configuration for the module
+  config = { 
 
-    stateVersion = "24.05";
+    # Description: Define options for the user's home
+    # Type: Attribute Set
+    home = {
+
+      username = "orchestrator";
+
+      homeDirectory = "/home/orchestrator";
+
+      stateVersion = "24.05";
+
+    };
 
   };
 
