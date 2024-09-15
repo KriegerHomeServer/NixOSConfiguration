@@ -37,7 +37,11 @@
         ./hosts/orchestrator/configuration.nix
       ];
 
-      orchestrator.hardware-configuration = "hyper-v";
+      config = {
+
+        orchestrator.hardware-configuration = "hyper-v";
+      
+      };
 
     };
 
