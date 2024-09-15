@@ -30,18 +30,18 @@
     nixosConfigurations.orchestrator-hyper-v = nixpkgs.lib.nixosSystem {
 
       specialArgs = {
+        
+        inherit inputs;
+        
         system = "x86_64-linux";
+
+        config.orchestrator.hardware-configuration = "hyper-v";
+
       };
 
       modules = [
         ./hosts/orchestrator/configuration.nix
       ];
-
-      config = {
-
-        orchestrator.hardware-configuration = "hyper-v";
-      
-      };
 
     };
 

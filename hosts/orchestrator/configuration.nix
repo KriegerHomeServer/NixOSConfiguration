@@ -1,5 +1,5 @@
 # Configuration for the Orchestrator
-{ config, lib, pkgs, modulesPath, ... }: {
+{ config, lib, pkgs, modulesPath, inputs, ... }: {
 
   # Import other modules
   imports = [
