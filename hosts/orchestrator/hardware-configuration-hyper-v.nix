@@ -17,6 +17,13 @@
     boot.kernelModules = [ ];
     boot.extraModulePackages = [ ]; 
 
+    fileSystem."/" = {
+      device = "/dev/disk/by-uuid/f58b50a3-a373-46fb-8dfe-209fe5ee15df";
+      fsType = "ext4";
+    };
+
+    swapDevices = [ ];
+
     networking.useDHCP = lib.mkDefault true;
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
