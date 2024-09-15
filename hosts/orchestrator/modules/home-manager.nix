@@ -3,6 +3,7 @@
 
   # Import additional modules
   imports = [
+    inputs.home-manager.nixosModules.default
     ../users/orchestrator.nix
   ];
 

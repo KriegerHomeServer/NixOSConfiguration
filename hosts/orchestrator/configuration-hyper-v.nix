@@ -3,7 +3,6 @@
 
   # Import additional modules
   imports = [
-    inputs.home-manager.nixosModules.default
     ./hardware-configuration-hyper-v.nix
     ./modules/bootloader.nix
     ./modules/home-manager.nix
