@@ -26,7 +26,6 @@
 
       git
       helm
-      ssh
 
     ];
 
