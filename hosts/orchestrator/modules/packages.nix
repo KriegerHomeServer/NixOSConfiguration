@@ -25,7 +25,8 @@
     environment.systemPackages = with pkgs; [
 
       git
-      wget
+      helm
+      ssh
 
     ];
 
