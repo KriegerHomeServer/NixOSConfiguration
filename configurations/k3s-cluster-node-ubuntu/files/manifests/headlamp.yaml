@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: system-headlamp
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: headlamp
+  namespace: kube-system
+spec:
+  repo: https://headlamp-k8s.github.io/headlamp/
+  chart: headlamp
+  targetNamespace: system-headlamp
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: headlamp-lb
+  namespace: system-headlamp
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      targetPort: http
+      protocol: TCP
+      port: 80
+  loadBalancerIP: 192.168.0.151
+  selector:
+    app.kubernetes.io/name: headlamp
+    app.kubernetes.io/instance: headlamp

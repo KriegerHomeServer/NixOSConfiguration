@@ -1,0 +1,22 @@
+name: Publish-Orchestrator
+
+on:
+
+jobs:
+  build:
+    name: Publish Orchestrator ISO
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      
+      - name: Install Nix CLI
+        uses: cachix/install-nix-action@v27
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Orchestrator ISO
+        run: cd orchestrator && nix build .
+
+      - name: Publish Orchestrator ISO
+        
